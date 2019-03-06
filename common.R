@@ -50,7 +50,7 @@ timeseries.to.matrix.t1 <- function(X, W) {
 # a design matrix D={Xi,Yi} where:
 # - Xi would be the W/7 PIF counts in the past for the i-th sample in steps of 7 days
 # - Yi would be the PIF to be predicted in 7 days for the i-th sample
-timeseries.to.matrix.t24 <- function(X, W) {
+timeseries.to.matrix.t7 <- function(X, W) {
      data  = NULL
      start.idx = 1
      for (i in (W+1):nrow(X)) {
