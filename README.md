@@ -8,7 +8,7 @@ Both R and RStudio must be installed in your computer. Moreover, the following R
 * hydroGOF
 * mlr
 
-If any of them is not installed yet, please proceed by installing them through the R command **install.packages('pck_name', dependencies=T)**. For example: **install.packages('caret', dependencies=T)**.
+If any of them is not installed yet, please proceed by installing them through the R command **install.packages**, e.g. **install.packages('caret', dependencies=T)**.
 
 Additionally, set the R working directory to the directory where the code and data is located in your computer through the R command **setwd**, e.g. **setwd('/home/users/test/neurocomputing-pif/')**.
 
