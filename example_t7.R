@@ -17,7 +17,7 @@ if (WINDOW == 0 || WINDOW %% 7 != 0) {
 # load the raw PIF data
 pif.data                  = read.csv("PIF_2010_data.csv",  header=T, sep=";", stringsAsFactors=F)
 # transform the aggregated time series into a design matrix that can be analysed through machine learning models
-data                      = timeseries.to.matrix.t24(X = pif.data, W = WINDOW)
+data                      = timeseries.to.matrix.t7(X = pif.data, W = WINDOW)
 WeekNumber.ToPredict      = data$WeekNumber.ToPredict
 data$WeekNumber.ToPredict = NULL
 
