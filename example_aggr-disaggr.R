@@ -5,7 +5,6 @@ source("common.R")
 source("aggr_disaggr.R")
 
 
-
 # Modify the size of the autoregressive window 
 # Possible values: 7, 14, 21, 28, ... ---> weekly patterns, multiple of 7 days
 WINDOW = 28
