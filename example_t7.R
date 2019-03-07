@@ -7,17 +7,17 @@ source("common.R")
 
 # Modify the size of the autoregressive window 
 # Possible values: 7, 14, 21, 28, ... ---> weekly patterns, multiple of 7 days
-WINDOW = 28
+WINDOW = 14
 
 
 if (WINDOW == 0 || WINDOW %% 7 != 0) {
      stop("The WINDOW parameter should be a multiple of 7 days, e.g. 7, 14, 21, 28 ...")
 }
 
-# load the raw PIF data
-pif.data                  = read.csv("PIF_2010_data.csv",  header=T, sep=";", stringsAsFactors=F)
+# load the raw original data
+original.data             = read.csv("library_users_2004.csv",  header=T, sep=";", stringsAsFactors=F)
 # transform the aggregated time series into a design matrix that can be analysed through machine learning models
-data                      = timeseries.to.matrix.t7(X = pif.data, W = WINDOW)
+data                      = timeseries.to.matrix.t7(X = original.data, W = WINDOW)
 WeekNumber.ToPredict      = data$WeekNumber.ToPredict
 data$WeekNumber.ToPredict = NULL
 
