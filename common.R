@@ -21,10 +21,10 @@ get.regression.measures <- function(truth, response) {
 
 
 
-# given the the PIF data and a size for the autoregressive windows, it will return
+# given the original data and a size for the autoregressive windows, it will return
 # a design matrix D={Xi,Yi} where:
-# - Xi would be the W PIF counts in the past for the i-th sample
-# - Yi would be the PIF count to be predicted in the next day for the i-th sample
+# - Xi would be the W counts in the past for the i-th sample
+# - Yi would be the count to be predicted in the next day for the i-th sample
 timeseries.to.matrix.t1 <- function(X, W) {
      data  = NULL
      start.idx = 1
@@ -46,10 +46,10 @@ timeseries.to.matrix.t1 <- function(X, W) {
 
 
 
-# given the the PIF data and a size for the autoregressive windows, it will return
+# given the  data and a size for the autoregressive windows, it will return
 # a design matrix D={Xi,Yi} where:
-# - Xi would be the W/7 PIF counts in the past for the i-th sample in steps of 7 days
-# - Yi would be the PIF to be predicted in 7 days for the i-th sample
+# - Xi would be the W/7 counts in the past for the i-th sample in steps of 7 days
+# - Yi would be the count to be predicted in 7 days for the i-th sample
 timeseries.to.matrix.t7 <- function(X, W) {
      data  = NULL
      start.idx = 1
