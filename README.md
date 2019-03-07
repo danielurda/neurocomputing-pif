@@ -19,7 +19,7 @@ There are three 3 R scripts which can be executed:
 * example_t7.R: it performs a 10-fold cross-validation fitting a linear regression model using the **t+7** strategy.
 * example_aggr-disaggr.R: it performs a 10-fold cross-validation fitting a linear regression model using the **aggregated** strategy.
 
-In any of these cases, first set the size of the autoregressive windows to be used in the analysis by modifying line 10 or 11 in the scripts (depending on the script), e.g. **WINDOW=7**.
+In any of these cases, first set the size of the autoregressive windows to be used in the analysis by modifying line 10 of the scripts, e.g. **WINDOW=7**.
 
 Then, simply execute the script through the R command **source**, e.g. **source('example_t1.R')**.
 
