@@ -1,17 +1,17 @@
-# given the raw PIF data, it buils a matrix where each row contains aggregated information for every single week:
+# given the raw original data, it buils a matrix where each row contains aggregated information for every single week:
 # - WeekNumber: 1, 2, 3, .... 
-# - Wt: sum of the daily PIF counts for the given week
-# - Yt: daily PIF counts for the given week
-# - Bt: coefficients representing the ratio between the daily PIF counts and the sum of the daily PIF counts
+# - Wt: sum of the daily counts for the given week
+# - Yt: daily counts for the given week
+# - Bt: coefficients representing the ratio between the daily counts and the sum of the daily counts
 aggregate.weekly.info <- function(X) {
      aggregated.weeks = NULL
      for (i in 1:max(X$WeekNumber)) {
-          daily.pif.per.week     = rev(X$Count[X$WeekNumber == i])
-          sum.daily.pif.per.week = sum(daily.pif.per.week)
-          daily.weight.per.week  = daily.pif.per.week/sum.daily.pif.per.week
+          daily.count.per.week     = rev(X$Count[X$WeekNumber == i])
+          sum.daily.count.per.week = sum(daily.count.per.week)
+          daily.weight.per.week  = daily.count.per.week/sum.daily.count.per.week
           
           aggregated.weeks        = rbind(aggregated.weeks, 
-                                         c(i, sum.daily.pif.per.week, daily.pif.per.week, daily.weight.per.week))
+                                         c(i, sum.daily.count.per.week, daily.count.per.week, daily.weight.per.week))
      }
      colnames(aggregated.weeks) = c("WeekNumber","Wt", paste0("Yt_", 1:7), paste0("Bt_", 1:7))
      rownames(aggregated.weeks) = NULL
@@ -22,7 +22,7 @@ aggregate.weekly.info <- function(X) {
 
 
 
-# given the aggregated weekly information of the PIF data and a size for the autoregressive windows, it will return
+# given the aggregated weekly information of the data and a size for the autoregressive windows, it will return
 # a design matrix D={Xi,Yi} where:
 # - Xi would be the W/7 aggregated values in the past for the i-th sample
 # - Yi would be the next aggregated value (the entire next week) to be predicted for the i-th sample
@@ -48,8 +48,8 @@ aggregated.timeseries.to.matrix <- function(X, W) {
 
 
 # it can be called in two modes:
-# - when type is truth, it converts the aggregated values (sum of daily PIF counts in a week) back to the original 
-#   vector of daily PIF counts
+# - when type is truth, it converts the aggregated values (sum of daily counts in a week) back to the original 
+#   vector of daily counts
 # - when type is prediction, it takes the Bt coefficients only for weeks used to train the model from the aggregated 
 #   weekly information matrix, it computes the median value for each Bt coefficient and the result is used to weight the
 #   predicted aggregated value of the model
