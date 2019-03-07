@@ -1,5 +1,5 @@
 # Neurocomputing-BIP
-This repository contains an example database and the R code to train a linear regression model using the t+1, t+7 and aggregated strategies covered in the paper.
+This repository contains an example database corresponding to the library users at the Polytechnic School of Engineering in Algeciras, which has a weekly periodicity. This repository provides the R code to train a linear regression model using the t+1, t+7 and aggregated strategies covered in the paper.
 
 
 # Pre-requisites
