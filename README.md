@@ -1,11 +1,11 @@
 # Neurocomputing-BIP
-This repository contains an example database corresponding to the library users at the Polytechnic School of Engineering in Algeciras, which has a weekly periodicity. This repository provides the R code to train a linear regression model using the t+1, t+7 and aggregated strategies covered in the paper.
+This repository contains an example database corresponding to the library users at the Polytechnic School of Engineering in Algeciras, which has a weekly periodicity. Moreover, it provides the R code to train a linear regression model using the t+1, t+7 and aggregated strategies covered in the paper.
 
 
 # Pre-requisites
 Both R and RStudio must be installed in your computer. Moreover, the following R libraries must be installed:
 * caret
-* hydroGOF
+* hydroGOFThis
 * mlr
 
 If any of them is not installed yet, please proceed by installing them through the R command **install.packages**, e.g. **install.packages('caret', dependencies=T)**.
