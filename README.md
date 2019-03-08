@@ -5,7 +5,7 @@ This repository contains an example database corresponding to the library users 
 # Pre-requisites
 Both R and RStudio must be installed in your computer. Moreover, the following R libraries must be installed:
 * caret
-* hydroGOFThis
+* hydroGOF
 * mlr
 
 If any of them is not installed yet, please proceed by installing them through the R command **install.packages**, e.g. **install.packages('caret', dependencies=T)**.
